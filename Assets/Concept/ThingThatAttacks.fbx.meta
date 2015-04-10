@@ -1,0 +1,404 @@
+fileFormatVersion: 2
+guid: d82d34aab2ddb2c45b827cba16c2c34c
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: joint1
+    100002: joint13
+    100004: joint14
+    100006: joint15
+    100008: joint16
+    100010: joint17
+    100012: joint18
+    100014: joint19
+    100016: joint2
+    100018: joint20
+    100020: joint21
+    100022: joint22
+    100024: joint23
+    100026: joint24
+    100028: joint25
+    100030: joint26
+    100032: joint27
+    100034: joint28
+    100036: joint29
+    100038: joint3
+    100040: joint30
+    100042: joint31
+    100044: joint32
+    100046: joint33
+    100048: joint34
+    100050: joint35
+    100052: joint36
+    100054: joint37
+    100056: joint38
+    100058: joint39
+    100060: joint4
+    100062: joint40
+    100064: joint41
+    100066: joint42
+    100068: joint43
+    100070: joint44
+    100072: joint45
+    100074: joint46
+    100076: joint47
+    100078: joint48
+    100080: joint49
+    100082: joint50
+    100084: joint51
+    100086: joint6
+    100088: joint7
+    100090: leftArm
+    100092: model:Group1
+    100094: //RootNode
+    400000: joint1
+    400002: joint13
+    400004: joint14
+    400006: joint15
+    400008: joint16
+    400010: joint17
+    400012: joint18
+    400014: joint19
+    400016: joint2
+    400018: joint20
+    400020: joint21
+    400022: joint22
+    400024: joint23
+    400026: joint24
+    400028: joint25
+    400030: joint26
+    400032: joint27
+    400034: joint28
+    400036: joint29
+    400038: joint3
+    400040: joint30
+    400042: joint31
+    400044: joint32
+    400046: joint33
+    400048: joint34
+    400050: joint35
+    400052: joint36
+    400054: joint37
+    400056: joint38
+    400058: joint39
+    400060: joint4
+    400062: joint40
+    400064: joint41
+    400066: joint42
+    400068: joint43
+    400070: joint44
+    400072: joint45
+    400074: joint46
+    400076: joint47
+    400078: joint48
+    400080: joint49
+    400082: joint50
+    400084: joint51
+    400086: joint6
+    400088: joint7
+    400090: leftArm
+    400092: model:Group1
+    400094: //RootNode
+    4300000: model:Group1
+    7400000: Attack
+    7400002: Idle
+    9500000: //RootNode
+    13700000: model:Group1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Attack
+      takeName: Take 001
+      firstFrame: 40
+      lastFrame: 62
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: joint1
+        weight: 1
+      - path: joint1/joint2
+        weight: 1
+      - path: joint1/joint2/joint3
+        weight: 1
+      - path: joint1/joint2/joint3/joint4
+        weight: 1
+      - path: joint1/joint2/joint3/joint37
+        weight: 1
+      - path: joint1/joint2/joint3/joint37/joint38
+        weight: 1
+      - path: joint1/joint2/joint3/joint37/joint38/joint39
+        weight: 1
+      - path: joint1/joint2/joint3/joint37/joint38/joint39/joint40
+        weight: 1
+      - path: joint1/joint2/joint3/joint37/joint38/joint39/joint40/joint41
+        weight: 1
+      - path: joint1/joint2/joint3/joint37/joint38/joint39/joint42
+        weight: 1
+      - path: joint1/joint2/joint3/joint37/joint38/joint39/joint42/joint43
+        weight: 1
+      - path: joint1/joint2/joint3/joint37/joint38/joint39/joint44
+        weight: 1
+      - path: joint1/joint2/joint3/joint37/joint38/joint39/joint44/joint45
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm/joint6
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm/joint6/joint7
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm/joint6/joint7/joint13
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm/joint6/joint7/joint13/joint14
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm/joint6/joint7/joint15
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm/joint6/joint7/joint15/joint16
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm/joint6/joint7/joint17
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm/joint6/joint7/joint17/joint18
+        weight: 1
+      - path: joint1/joint19
+        weight: 1
+      - path: joint1/joint19/joint20
+        weight: 1
+      - path: joint1/joint19/joint20/joint21
+        weight: 1
+      - path: joint1/joint19/joint20/joint21/joint22
+        weight: 1
+      - path: joint1/joint19/joint20/joint21/joint22/joint23
+        weight: 1
+      - path: joint1/joint19/joint20/joint21/joint24
+        weight: 1
+      - path: joint1/joint19/joint20/joint21/joint24/joint27
+        weight: 1
+      - path: joint1/joint19/joint20/joint21/joint25
+        weight: 1
+      - path: joint1/joint19/joint20/joint21/joint25/joint26
+        weight: 1
+      - path: joint1/joint28
+        weight: 1
+      - path: joint1/joint28/joint29
+        weight: 1
+      - path: joint1/joint28/joint29/joint30
+        weight: 1
+      - path: joint1/joint28/joint29/joint30/joint31
+        weight: 1
+      - path: joint1/joint28/joint29/joint30/joint31/joint32
+        weight: 1
+      - path: joint1/joint28/joint29/joint30/joint33
+        weight: 1
+      - path: joint1/joint28/joint29/joint30/joint33/joint34
+        weight: 1
+      - path: joint1/joint28/joint29/joint30/joint35
+        weight: 1
+      - path: joint1/joint28/joint29/joint30/joint35/joint36
+        weight: 1
+      - path: joint1/joint46
+        weight: 1
+      - path: joint1/joint46/joint47
+        weight: 1
+      - path: joint1/joint46/joint47/joint48
+        weight: 1
+      - path: joint1/joint46/joint47/joint48/joint49
+        weight: 1
+      - path: joint1/joint46/joint47/joint48/joint49/joint50
+        weight: 1
+      - path: joint1/joint46/joint47/joint48/joint49/joint50/joint51
+        weight: 1
+      - path: model:Group1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 4
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: joint1
+        weight: 1
+      - path: joint1/joint2
+        weight: 1
+      - path: joint1/joint2/joint3
+        weight: 1
+      - path: joint1/joint2/joint3/joint4
+        weight: 1
+      - path: joint1/joint2/joint3/joint37
+        weight: 1
+      - path: joint1/joint2/joint3/joint37/joint38
+        weight: 1
+      - path: joint1/joint2/joint3/joint37/joint38/joint39
+        weight: 1
+      - path: joint1/joint2/joint3/joint37/joint38/joint39/joint40
+        weight: 1
+      - path: joint1/joint2/joint3/joint37/joint38/joint39/joint40/joint41
+        weight: 1
+      - path: joint1/joint2/joint3/joint37/joint38/joint39/joint42
+        weight: 1
+      - path: joint1/joint2/joint3/joint37/joint38/joint39/joint42/joint43
+        weight: 1
+      - path: joint1/joint2/joint3/joint37/joint38/joint39/joint44
+        weight: 1
+      - path: joint1/joint2/joint3/joint37/joint38/joint39/joint44/joint45
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm/joint6
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm/joint6/joint7
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm/joint6/joint7/joint13
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm/joint6/joint7/joint13/joint14
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm/joint6/joint7/joint15
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm/joint6/joint7/joint15/joint16
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm/joint6/joint7/joint17
+        weight: 1
+      - path: joint1/joint2/joint3/leftArm/joint6/joint7/joint17/joint18
+        weight: 1
+      - path: joint1/joint19
+        weight: 1
+      - path: joint1/joint19/joint20
+        weight: 1
+      - path: joint1/joint19/joint20/joint21
+        weight: 1
+      - path: joint1/joint19/joint20/joint21/joint22
+        weight: 1
+      - path: joint1/joint19/joint20/joint21/joint22/joint23
+        weight: 1
+      - path: joint1/joint19/joint20/joint21/joint24
+        weight: 1
+      - path: joint1/joint19/joint20/joint21/joint24/joint27
+        weight: 1
+      - path: joint1/joint19/joint20/joint21/joint25
+        weight: 1
+      - path: joint1/joint19/joint20/joint21/joint25/joint26
+        weight: 1
+      - path: joint1/joint28
+        weight: 1
+      - path: joint1/joint28/joint29
+        weight: 1
+      - path: joint1/joint28/joint29/joint30
+        weight: 1
+      - path: joint1/joint28/joint29/joint30/joint31
+        weight: 1
+      - path: joint1/joint28/joint29/joint30/joint31/joint32
+        weight: 1
+      - path: joint1/joint28/joint29/joint30/joint33
+        weight: 1
+      - path: joint1/joint28/joint29/joint30/joint33/joint34
+        weight: 1
+      - path: joint1/joint28/joint29/joint30/joint35
+        weight: 1
+      - path: joint1/joint28/joint29/joint30/joint35/joint36
+        weight: 1
+      - path: joint1/joint46
+        weight: 1
+      - path: joint1/joint46/joint47
+        weight: 1
+      - path: joint1/joint46/joint47/joint48
+        weight: 1
+      - path: joint1/joint46/joint47/joint48/joint49
+        weight: 1
+      - path: joint1/joint46/joint47/joint48/joint49/joint50
+        weight: 1
+      - path: joint1/joint46/joint47/joint48/joint49/joint50/joint51
+        weight: 1
+      - path: model:Group1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
