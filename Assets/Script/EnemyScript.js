@@ -7,6 +7,7 @@ var HP: int;
 var dmg: int;
 var cooldown: float;
 var meleeRange: float;
+
 function Awake () {
 	HP = 200;
 	target = null;
@@ -65,7 +66,7 @@ function PathFind(target: GameObject){
 				var player: GameObject = GameObject.FindGameObjectWithTag("Player");
 				if (dir.magnitude > player.GetComponentInChildren(CapsuleCollider).radius + GetComponent(CapsuleCollider).radius)
 					player.BroadcastMessage("SetDestination", dir);
-				else player.BroadcastMessage("MeleeAttack", this);
+				else player.BroadcastMessage("MeleeAttack", this.gameObject);
 			
 		}
 	}
