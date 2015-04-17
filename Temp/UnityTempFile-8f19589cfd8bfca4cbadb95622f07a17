@@ -49,6 +49,7 @@
 -r:"C:/Program Files (x86)/Unity4/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.4/UnityEngine.UI.dll"
 -r:"C:/Program Files (x86)/Unity4/Editor/Data/Managed/UnityEditor.dll"
 -i:UnityEditor
+Assets/Script/AOEScript.js
 Assets/Script/Character.js
 Assets/Script/EnemyScript.js
 Assets/Script/RayScript.js

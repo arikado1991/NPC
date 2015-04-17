@@ -2,6 +2,7 @@
 
 	var anim: Animator;
 	var projectile: GameObject;
+	var AOE: GameObject;
 	var HP = 500;
 	var dmg = 100;
 	@HideInInspector
@@ -91,6 +92,12 @@
 			//Debug.Log("kill");
 			attack = false;
 					
+	}
+	
+	function CastSkill4 (p: Vector3){
+		var aoe: GameObject = GameObject.Instantiate(AOE);
+		aoe.BroadcastMessage("SetDuration", 5.0);
+		aoe.BroadcastMessage("SetPos", p);
 	}
 
 
