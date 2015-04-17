@@ -3,7 +3,7 @@ var speed: float;
 var dir: Vector3;
 var dmg: int;
 function Start () {
-	speed  = .5;
+	speed  = .2;
 }
 function setPos(pos: Vector3){
 	this.transform.position = pos;

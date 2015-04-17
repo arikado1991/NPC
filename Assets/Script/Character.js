@@ -22,7 +22,15 @@
 		HP -= dmg;
 	}
 
-
+	function Shoot(dir:Vector3){
+		if(cooldown > 0) return;
+		cooldown = .5;
+		anim.SetFloat("Cooldown", .4);
+		var bullet = GameObject.Instantiate(projectile);
+		bullet.BroadcastMessage('setDir', dir);
+		bullet.BroadcastMessage('setPos', this.transform.position);
+		bullet.BroadcastMessage('setDmg', dmg*.8);
+	}
 	function Update () {
 		if (anim.GetFloat("Cooldown") <= 0){
 			if (Input.GetKey('z')){

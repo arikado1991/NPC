@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Character.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\EnemyScript.js">
     <Files>
-      <File FileName="Assets\Script\Character.js" Line="23" Column="1" />
+      <File FileName="Assets\Script\Character.js" Line="85" Column="3" />
+      <File FileName="Assets\Script\EnemyScript.js" Line="67" Column="72" />
+      <File FileName="Assets\Script\RayScript.js" Line="12" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
