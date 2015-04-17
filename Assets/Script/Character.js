@@ -9,12 +9,14 @@
 	var turnSpeed: float;
 	var cooldown: float;
 	var attack: boolean;
+	var dest: Vector3;
 
 	function Start () {
-		anim = this.GetComponent(Animator);
+		anim = this.GetComponentInChildren(Animator);
 		turnSpeed = 2.0;
-		speed	  = 0.08;
+		speed	  = 5;
 		attack = false;
+		dest = transform.position;
 	}
 	function getHit(dmg: int){
 		HP -= dmg;
@@ -39,9 +41,23 @@
 				bullet.BroadcastMessage('setDmg', dmg*.8);
 			}
 		}
+		
+		var dir: Vector3;
+		if (transform.position != dest){
+	
+			
+			dir = dest - transform.position;
+			var translate: Vector3 =  dir*(1.0/dir.magnitude)*speed*Time.deltaTime;
+			if (dir.magnitude < translate.magnitude)
+				translate = dir;
+			transform.position +=  translate;
+		//	
+		}
+		
+		
 		// movements stuffs
 		Debug.Log(turnSpeed);
-		var dir: Vector3;
+		
 		if (Input.GetKey("up"))
 			dir = Vector3.back;
 		if (Input.GetKey("down"))
@@ -50,7 +66,7 @@
 			this.transform.RotateAround(Vector3.up, Time.deltaTime*turnSpeed);
 		if (Input.GetKey("left"))
 			this.transform.RotateAround(Vector3.up, Time.deltaTime*-turnSpeed);
-		transform.position += this.transform.rotation* dir*speed;
+		//transform.position += this.transform.rotation* dir*speed;
 			
 		// make the model stop swinging his arm after the attack is over	
 		anim.SetFloat("Cooldown", anim.GetFloat("Cooldown") - Time.deltaTime);
@@ -60,6 +76,11 @@
 		}
 		if (cooldown > 0) cooldown -= Time.deltaTime;
 		//if (HP <= 0) GameObject.Destroy(this.gameObject);
+	}
+	
+	function SetDestination(dest:Vector3){
+		this.dest = dest;
+		//transform.LookAt(dest);
 	}
 	function OnCollisionEnter(col: Collision){
 		if (col.gameObject.CompareTag("Enemy") && attack){
