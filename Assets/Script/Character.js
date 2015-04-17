@@ -56,17 +56,7 @@
 		
 		
 		// movements stuffs
-		Debug.Log(turnSpeed);
-		
-		if (Input.GetKey("up"))
-			dir = Vector3.back;
-		if (Input.GetKey("down"))
-			dir = Vector3.forward;
-		if (Input.GetKey("right"))
-			this.transform.RotateAround(Vector3.up, Time.deltaTime*turnSpeed);
-		if (Input.GetKey("left"))
-			this.transform.RotateAround(Vector3.up, Time.deltaTime*-turnSpeed);
-		//transform.position += this.transform.rotation* dir*speed;
+	
 			
 		// make the model stop swinging his arm after the attack is over	
 		anim.SetFloat("Cooldown", anim.GetFloat("Cooldown") - Time.deltaTime);
@@ -79,18 +69,22 @@
 	}
 	
 	function SetDestination(dest:Vector3){
-		this.dest = dest;
+		if (Vector3.Distance(dest,this.transform.position) > 0.6f)
+		{	
+			//Debug.Log(Vector3.Distance(dest,this.transform.position));
+			this.dest = dest;
+		}
 		//transform.LookAt(dest);
 	}
-	function OnCollisionEnter(col: Collision){
-		if (col.gameObject.CompareTag("Enemy") && attack){
-			col.gameObject.BroadcastMessage("getHit", dmg);
-			col.gameObject.transform.position -= col.gameObject.transform.rotation* Vector3.forward*1.2;
-			Debug.Log("kill");
+	function MeleeAttack(enemy: GameObject){
+		//if (col.gameObject.CompareTag("Enemy") && attack){
+			enemy.BroadcastMessage("getHit", dmg);
+			//col.gameObject.transform.position -= col.gameObject.transform.rotation* Vector3.forward*1.2;
+			//Debug.Log("kill");
 			attack = false;
-		}
-			
+					
 	}
+
 
 
 

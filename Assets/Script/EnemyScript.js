@@ -1,4 +1,4 @@
-﻿#pragma strict
+#pragma strict
 
 var target: GameObject;
 var speed;
@@ -24,7 +24,7 @@ function Update () {
 		Debug.Log("Saw you!");
 		target = plr;
 	}
-	if (target!=null){
+	if (NeedToMove()){
 		
 		transform.LookAt(target.transform);
 		transform.rotation*Vector3.forward*Time.deltaTime;
@@ -41,12 +41,34 @@ function Update () {
 	}
 }
 
+function NeedToMove(){
+	if (target == null) return false;
+	return (Vector3.Distance(target.transform.position, transform.position) > target.GetComponentInChildren(CapsuleCollider).radius + GetComponent(CapsuleCollider).radius);
+}
+
 function PathFind(target: GameObject){
 	transform.LookAt(target.transform);
 	return transform.rotation*Vector3.forward*Time.deltaTime;
 }
 
-
+	
+	function OnMouseDrag(){
+		var ray: Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		var hit: RaycastHit;
+		
+		if (Physics.Raycast(ray,  hit, 100))
+		{
+			
+				Debug.Log("Hayayaya");
+				var dir: Vector3 = Vector3(hit.point.x,0,hit.point.z)-this.transform.position;
+				dir = transform.position - dir*(1/dir.magnitude)*GetComponentInChildren(CapsuleCollider).radius;
+				var player: GameObject = GameObject.FindGameObjectWithTag("Player");
+				if (dir.magnitude > player.GetComponentInChildren(CapsuleCollider).radius + GetComponent(CapsuleCollider).radius)
+					player.BroadcastMessage("SetDestination", dir);
+				else player.BroadcastMessage("MeleeAttack", this);
+			
+		}
+	}
 
 function getHit(dmg:int){
 	HP -= dmg;

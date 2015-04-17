@@ -7,6 +7,6 @@ function OnMouseDrag(): void{
 	
 	if (Physics.Raycast(ray,  hit, 100))
 	{
-		GameObject.FindGameObjectWithTag("Player").BroadcastMessage("SetDestination", hit.point);
+		GameObject.FindGameObjectWithTag("Player").BroadcastMessage("SetDestination", Vector3(hit.point.x, 0, hit.point.z));
 	}
 }
