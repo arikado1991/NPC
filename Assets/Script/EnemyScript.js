@@ -7,6 +7,7 @@ var HP: int;
 var dmg: int;
 var cooldown: float;
 var meleeRange: float;
+var EXPPoint: int;
 
 function Awake () {
 	HP = 200;
@@ -16,6 +17,7 @@ function Awake () {
 	dmg = 10;
 	cooldown = 0;
 	meleeRange = 1.205;
+	EXPPoint = 10;
 
 }
 
@@ -37,8 +39,8 @@ function Update () {
 	else if (target!= null && Vector3.Distance(transform.position, target.transform.position) <= meleeRange) {
 		
 		
-		target.GetComponent(Character).HP -=  dmg;
-		cooldown = .8;
+		target.GetComponent(Character).stats.HP -=  dmg;
+		cooldown = 1.2;
 	}
 }
 
@@ -76,6 +78,7 @@ function getHit(dmg:int){
 	if (HP <= 0){
 		for (var i: int = 0; i < 2; i++)
 			GameObject.Instantiate(respawn).transform.position = Vector3(Random.RandomRange(0,5),this.transform.position.y,Random.RandomRange(0,5));
+		GameObject.FindObjectOfType(Character).stats.AddEXP(EXPPoint);
 		GameObject.Destroy(this.gameObject);
 		}
 	else target = GameObject.FindGameObjectWithTag("Player");

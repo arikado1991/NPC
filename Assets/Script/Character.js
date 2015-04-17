@@ -1,8 +1,10 @@
 ﻿#pragma strict
 
+	var stats: Stats;
 	var anim: Animator;
 	var projectile: GameObject;
 	var AOE: GameObject;
+	var LvUpLight: GameObject;
 	var HP = 500;
 	var dmg = 100;
 	@HideInInspector
@@ -18,6 +20,10 @@
 		speed	  = 5;
 		attack = false;
 		dest = transform.position;
+		stats = new Stats();
+	
+		
+		
 	}
 	function getHit(dmg: int){
 		HP -= dmg;
@@ -98,6 +104,10 @@
 		var aoe: GameObject = GameObject.Instantiate(AOE);
 		aoe.BroadcastMessage("SetDuration", 5.0);
 		aoe.BroadcastMessage("SetPos", p);
+	}
+	
+	function Lit(){
+		GameObject.Instantiate(LvUpLight).transform.position = transform.position + Vector3.up*.1;
 	}
 
 
