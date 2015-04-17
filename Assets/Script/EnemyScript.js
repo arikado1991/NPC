@@ -38,7 +38,7 @@ function Update () {
 		
 		
 		target.GetComponent(Character).HP -=  dmg;
-		cooldown = .3;
+		cooldown = .8;
 	}
 }
 
@@ -59,12 +59,12 @@ function PathFind(target: GameObject){
 		
 		if (Physics.Raycast(ray,  hit, 100))
 		{
-			
-				Debug.Log("Hayayaya");
-				var dir: Vector3 = Vector3(hit.point.x,0,hit.point.z)-this.transform.position;
-				dir = transform.position - dir*(1/dir.magnitude)*GetComponentInChildren(CapsuleCollider).radius;
 				var player: GameObject = GameObject.FindGameObjectWithTag("Player");
-				if (dir.magnitude > player.GetComponentInChildren(CapsuleCollider).radius + GetComponent(CapsuleCollider).radius)
+				Debug.Log("Hayayaya");
+				var dir: Vector3 = Vector3(hit.point.x,0,hit.point.z)-player.transform.position;
+				dir = transform.position - dir*(1/dir.magnitude)*GetComponentInChildren(CapsuleCollider).radius;
+	
+				if (Vector3.Distance(player.transform.position, transform.position) > player.GetComponentInChildren(CapsuleCollider).radius + GetComponent(CapsuleCollider).radius)
 					player.BroadcastMessage("SetDestination", dir);
 				else player.BroadcastMessage("MeleeAttack", this.gameObject);
 			
