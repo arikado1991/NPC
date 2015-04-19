@@ -1,14 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\UI.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\enemyCube.js">
     <Files>
-      <File FileName="Assets\Script\Character.js" Line="23" Column="2" />
+      <File FileName="Assets\Script\Character.js" Line="110" Column="92" />
       <File FileName="Assets\Script\EnemyScript.js" Line="1" Column="1" />
       <File FileName="Assets\Script\RayScript.js" Line="1" Column="1" />
       <File FileName="Assets\Script\Rock.js" Line="1" Column="1" />
       <File FileName="Assets\Script\AOEScript.js" Line="1" Column="1" />
-      <File FileName="Assets\Script\UI.js" Line="17" Column="24" />
-      <File FileName="Assets\Script\Stats.js" Line="17" Column="19" />
+      <File FileName="Assets\Script\UI.js" Line="1" Column="1" />
+      <File FileName="Assets\Script\Stats.js" Line="1" Column="1" />
+      <File FileName="Assets\Script\LvUpLight.js" Line="1" Column="1" />
+      <File FileName="Assets\hoverHP.js" Line="1" Column="1" />
+      <File FileName="Assets\enemyCube.js" Line="24" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

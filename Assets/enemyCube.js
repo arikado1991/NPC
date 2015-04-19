@@ -21,7 +21,7 @@ function Start()
 function Update()
 {
 
-	//percentHP = enemyCurrentHP/enemyMaxHP;
+	percentHP = enemyCurrentHP/enemyMaxHP;
 	Debug.Log(percentHP);
 	enemyHPLength = percentHP *100;
 	HPBar.guiTexture.pixelInset.width = enemyHPLength;

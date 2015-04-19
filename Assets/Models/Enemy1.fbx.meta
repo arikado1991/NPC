@@ -1,0 +1,145 @@
+fileFormatVersion: 2
+guid: eb31bfd5daa8f4247adc16df561ce13b
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: group
+    100004: joint1
+    100006: joint10
+    100008: joint11
+    100010: joint12
+    100012: joint13
+    100014: joint14
+    100016: joint15
+    100018: joint16
+    100020: joint17
+    100022: joint19
+    100024: joint2
+    100026: joint20
+    100028: joint21
+    100030: joint22
+    100032: joint23
+    100034: joint24
+    100036: joint25
+    100038: joint26
+    100040: joint3
+    100042: joint4
+    100044: joint5
+    100046: joint6
+    100048: joint7
+    100050: joint8
+    100052: joint9
+    100054: rat1:Group1
+    100056: rat1:Group1_MeshPart0
+    100058: rat1:Group1_MeshPart1
+    100060: Foe1:Group1
+    100062: Foe1:Group12
+    100064: Foe1:Group13
+    100066: Foe1:Group13_MeshPart0
+    100068: Foe1:Group13_MeshPart1
+    100070: Foe1:transform1
+    100072: Foe1:transform2
+    100074: joint18
+    400000: //RootNode
+    400002: group
+    400004: joint1
+    400006: joint10
+    400008: joint11
+    400010: joint12
+    400012: joint13
+    400014: joint14
+    400016: joint15
+    400018: joint16
+    400020: joint17
+    400022: joint19
+    400024: joint2
+    400026: joint20
+    400028: joint21
+    400030: joint22
+    400032: joint23
+    400034: joint24
+    400036: joint25
+    400038: joint26
+    400040: joint3
+    400042: joint4
+    400044: joint5
+    400046: joint6
+    400048: joint7
+    400050: joint8
+    400052: joint9
+    400054: rat1:Group1
+    400056: rat1:Group1_MeshPart0
+    400058: rat1:Group1_MeshPart1
+    400060: Foe1:Group1
+    400062: Foe1:Group12
+    400064: Foe1:Group13
+    400066: Foe1:Group13_MeshPart0
+    400068: Foe1:Group13_MeshPart1
+    400070: Foe1:transform1
+    400072: Foe1:transform2
+    400074: joint18
+    4300000: rat1:Group1_MeshPart0
+    4300002: rat1:Group1_MeshPart1
+    4300004: Foe1:Group13_MeshPart0
+    4300006: Foe1:Group13_MeshPart1
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: rat1:Group1_MeshPart0
+    13700002: rat1:Group1_MeshPart1
+    13700004: Foe1:Group13_MeshPart0
+    13700006: Foe1:Group13_MeshPart1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
