@@ -55,7 +55,7 @@ function PathFind(target: GameObject){
 }
 
 	
-	function OnMouseDrag(){
+	function OnMouseClick(){
 		var ray: Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		var hit: RaycastHit;
 		
@@ -84,14 +84,3 @@ function getHit(dmg:int){
 	else target = GameObject.FindGameObjectWithTag("Player");
 }
 
-function OnMouseOver(){
-	if (Input.GetMouseButton(1)){
-		cooldown = .5;
-	//	anim.SetFloat("Cooldown", .4);
-
-		var player: GameObject = GameObject.FindGameObjectWithTag("Player");
-		var dir: Vector3 = transform.position - player.transform.position;
-		dir = dir/dir.magnitude;
-		player.BroadcastMessage("Shoot", dir);
-	}
-}

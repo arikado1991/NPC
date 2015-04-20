@@ -15,12 +15,14 @@ function setDir(newDir: Vector3){
 	dir = newDir;
 }
 function Update () {
-	transform.position += speed*dir;
+	transform.position += speed*dir/dir.magnitude;
 }
 
 function OnCollisionEnter(c:Collision){
-	Debug.Log("collided");
+
+	
 	if (c.gameObject.CompareTag("Enemy")){
+		GameObject.Instantiate(GameObject.FindObjectOfType(Setting).ImpactPrefab).transform.position = c.contacts[0].point;
 		c.gameObject.BroadcastMessage("getHit",dmg);
 		Destroy(this.gameObject);
 	}

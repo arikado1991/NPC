@@ -77,6 +77,12 @@ ModelImporter:
     400068: joint7
     400070: joint8
     400072: joint9
+    2300000: Boss2:Group32781_MeshPart0
+    2300002: Boss2:Group32781_MeshPart1
+    2300004: Boss2:Group32781_MeshPart2
+    3300000: Boss2:Group32781_MeshPart0
+    3300002: Boss2:Group32781_MeshPart1
+    3300004: Boss2:Group32781_MeshPart2
     4300000: Boss2:Group32781_MeshPart0
     4300002: Boss2:Group32781_MeshPart1
     4300004: Boss2:Group32781_MeshPart2

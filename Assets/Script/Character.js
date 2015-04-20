@@ -20,7 +20,7 @@
 		speed	  = 5;
 		attack = false;
 		dest = transform.position;
-		stats = new Stats();
+		stats= new Stats("mage");
 	
 		
 		
@@ -29,15 +29,7 @@
 		HP -= dmg;
 	}
 
-	function Shoot(dir:Vector3){
-		if(cooldown > 0) return;
-		cooldown = .5;
-		anim.SetFloat("Cooldown", .4);
-		var bullet = GameObject.Instantiate(projectile);
-		bullet.BroadcastMessage('setDir', dir);
-		bullet.BroadcastMessage('setPos', this.transform.position);
-		bullet.BroadcastMessage('setDmg', dmg*.8);
-	}
+
 	function Update () {
 		if (anim.GetFloat("Cooldown") <= 0){
 			if (Input.GetKey('z')){
@@ -66,14 +58,9 @@
 			if (dir.magnitude < translate.magnitude)
 				translate = dir;
 			transform.position +=  translate;
-		//	
-		}
-		
-		
-		// movements stuffs
 	
-			
-		// make the model stop swinging his arm after the attack is over	
+		}
+	
 		anim.SetFloat("Cooldown", anim.GetFloat("Cooldown") - Time.deltaTime);
 		if (anim.GetFloat("Cooldown") <= 0){
 			anim.SetBool("Attack", false);	
@@ -99,7 +86,15 @@
 			attack = false;
 					
 	}
-	
+	function CastSkill1(pos:Vector3){
+		if(cooldown > 0) return;
+		cooldown = .5;
+		anim.SetFloat("Cooldown", .4);
+		var bullet = GameObject.Instantiate(projectile);
+		bullet.BroadcastMessage('setDir', pos - transform.position);
+		bullet.BroadcastMessage('setPos', this.transform.position);
+		bullet.BroadcastMessage('setDmg', dmg);
+	}
 	function CastSkill4 (p: Vector3){
 		var aoe: GameObject = GameObject.Instantiate(AOE);
 		aoe.BroadcastMessage("SetDuration", 5.0);

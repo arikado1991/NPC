@@ -49,9 +49,12 @@
      <Compile Include="Assets\Script\AOEScript.js" />
      <Compile Include="Assets\Script\Character.js" />
      <Compile Include="Assets\Script\EnemyScript.js" />
+     <Compile Include="Assets\Script\ImpactScript.js" />
      <Compile Include="Assets\Script\LvUpLight.js" />
      <Compile Include="Assets\Script\RayScript.js" />
      <Compile Include="Assets\Script\Rock.js" />
+     <Compile Include="Assets\Script\Setting.js" />
+     <Compile Include="Assets\Script\Skills.js" />
      <Compile Include="Assets\Script\Stats.js" />
      <Compile Include="Assets\Script\UI.js" />
      <Compile Include="Assets\Sources\CrumpleMesh.js" />
