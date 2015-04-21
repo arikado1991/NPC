@@ -11,7 +11,9 @@ class Skill{
 	var baseDamage: int;
 	var range: float;
 	var manaCost: int;
-	function Skill(type: SkillType, aType: AttributeType, sType: StatusEffect, prefab: GameObject){
-		
+	function Skill(type: SkillType, aType: AttributeType, sType: StatusEffect){
+		skillType = type;
+		attribute = aType;
+		statusEffect = sType;
 	}
 }
