@@ -1,0 +1,22 @@
+print "Starting maya loading and fbx conversion \n";
+			
+if (`file -q -exists "C:/Users/Viet/Desktop/GAMEPR~1/NPC/Assets/Models/Enemy1.mb"`)
+{
+	file -o "C:/Users/Viet/Desktop/GAMEPR~1/NPC/Assets/Models/Enemy1.mb";
+	FBXExportEmbeddedTextures -v false;
+	// FBXExportHardEdges -v true;
+	FBXExportApplyConstantKeyReducer -v false;
+	FBXExportShowUI -v false;
+
+	print "Before fbx export\n";
+	FBXExport -f "C:/Users/Viet/Desktop/GAMEPR~1/NPC/Temp/ExportedFBXFile.fbx";
+	print "after fbx export\n";
+}
+else
+	print "Could not open Maya file.";
+
+system ("del \"C:\\Users\\Viet\\Desktop\\GAMEPR~1\\NPC\\Temp\\CommandPipe\"");
+
+$donepipeKill = `fopen "C:/Users/Viet/Desktop/GAMEPR~1/NPC/Temp/SyncPipeKill" "w"`;
+fwrite $donepipeKill "Done";
+fclose $donepipeKill;
