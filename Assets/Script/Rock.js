@@ -22,7 +22,8 @@ function OnCollisionEnter(c:Collision){
 
 	
 	if (c.gameObject.CompareTag("Enemy")){
-		GameObject.Instantiate(GameObject.FindObjectOfType(Setting).ImpactPrefab).transform.position = c.contacts[0].point;
+		GameObject.Instantiate(GameObject.FindObjectOfType(Setting).ImpactPrefab).
+		BroadcastMessage("SetPos",c.contacts[0].point);
 		c.gameObject.BroadcastMessage("getHit",dmg);
 		Destroy(this.gameObject);
 	}

@@ -76,7 +76,7 @@ function PathFind(target: GameObject){
 function getHit(dmg:int){
 	HP -= dmg;
 	if (HP <= 0){
-		for (var i: int = 0; i < 2; i++)
+		for (var i: int = 0; i < 1; i++)
 			GameObject.Instantiate(respawn).transform.position = Vector3(Random.RandomRange(0,5),this.transform.position.y,Random.RandomRange(0,5));
 		GameObject.FindObjectOfType(Character).stats.AddEXP(EXPPoint);
 		GameObject.Destroy(this.gameObject);

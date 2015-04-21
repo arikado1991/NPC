@@ -76,7 +76,7 @@
 			//Debug.Log(Vector3.Distance(dest,this.transform.position));
 			this.dest = dest;
 		}
-		//transform.LookAt(dest);
+		transform.LookAt(dest);
 	}
 	function MeleeAttack(enemy: GameObject){
 		//if (col.gameObject.CompareTag("Enemy") && attack){

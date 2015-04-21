@@ -51,11 +51,14 @@
 -r:"C:/Program Files (x86)/Unity4/Editor/Data/Managed/UnityEditor.dll"
 -i:UnityEditor
 Assets/Script/AOEScript.js
+Assets/Script/CameraScript.js
 Assets/Script/Character.js
 Assets/Script/EnemyScript.js
+Assets/Script/ImpactScript.js
 Assets/Script/LvUpLight.js
 Assets/Script/RayScript.js
 Assets/Script/Rock.js
+Assets/Script/Setting.js
 Assets/Script/Skills.js
 Assets/Script/Stats.js
 Assets/Script/UI.js

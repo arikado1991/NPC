@@ -6,7 +6,7 @@ function Start () {
 }
 
 function SetPos(pos: Vector3){
-	this.position = pos;
+	position = pos;
 }
 
 function Update () {
@@ -14,6 +14,7 @@ function Update () {
 		GameObject.Destroy(this.gameObject);
 		Debug.Log("happens");
 	}
+	transform.position = position + Vector3(Random.RandomRange(-0.05f,0.05f),Random.RandomRange(-0.05f,0.05f),Random.RandomRange(-0.05f,0.05f));
 	duration -= Time.deltaTime;
 	
 }
