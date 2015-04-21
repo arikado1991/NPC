@@ -14,6 +14,7 @@
 	var attack: boolean;
 	var dest: Vector3;
 	var locked: boolean;
+	var EvolvedForm: GameObject;
 
 	function Start () {
 		anim = this.GetComponentInChildren(Animator);
@@ -73,24 +74,32 @@
 					
 	}
 	function CastSkill1(pos:Vector3){
+		transform.LookAt(pos + Vector3(0,-pos.y,0));
 		if(cooldown > 0) return;
 		cooldown = .5;
-		anim.SetFloat("Cooldown", .4);
+		anim.SetFloat("Cooldown", .4); 
 		var bullet = GameObject.Instantiate(projectile);
 		bullet.BroadcastMessage('setDir', pos - transform.position);
-		bullet.BroadcastMessage('setPos', this.transform.position);
+		bullet.BroadcastMessage('setPos', transform.position);
 		bullet.BroadcastMessage('setDmg', dmg);
 	}
 	function CastSkill4 (p: Vector3){
+		transform.LookAt(p + Vector3(0,-p.y,0));
 		var aoe: GameObject = GameObject.Instantiate(AOE);
 		aoe.BroadcastMessage("SetDuration", 5.0);
-		aoe.BroadcastMessage("SetPos", p);
+		aoe.BroadcastMessage("SetPos", p );
 	}
 	
 	function Lit(){
 		GameObject.Instantiate(LvUpLight).transform.position = transform.position + Vector3.up*.1;
 	}
-
+	function Evolve(){
+		if (EvolvedForm != null){
+			GameObject.Instantiate(EvolvedForm).transform.position = transform.position;
+			EvolvedForm = null;
+			GameObject.Destroy(this.gameObject);
+		}
+	}
 
 
 

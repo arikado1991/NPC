@@ -11,7 +11,7 @@ function OnMouseOver(): void{
 		if (Input.GetMouseButton(0)){
 			var pos: Vector3 = Vector3(hit.point.x, 0, hit.point.z);
 			var dir: Vector3 = pos-player.transform.position;
-			if(GetComponent(CapsuleCollider)!= null){ 
+			if(this.CompareTag("Enemy") && GetComponent(CapsuleCollider)!= null){ 
 				dir = transform.position - dir*(1/dir.magnitude)*GetComponent(CapsuleCollider).radius;
 	
 				if (Vector3.Distance(player.transform.position, transform.position) > player.GetComponentInChildren(CapsuleCollider).radius + GetComponent(CapsuleCollider).radius)

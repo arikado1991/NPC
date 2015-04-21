@@ -18,12 +18,12 @@ function Update () {
 	transform.position += speed*dir/dir.magnitude;
 }
 
-function OnCollisionEnter(c:Collision){
+function OnTriggerEnter(c:Collider){
 
 	
 	if (c.gameObject.CompareTag("Enemy")){
 		GameObject.Instantiate(GameObject.FindObjectOfType(Setting).ImpactPrefab).
-		BroadcastMessage("SetPos",c.contacts[0].point);
+		BroadcastMessage("SetPos",transform.position);
 		c.gameObject.BroadcastMessage("getHit",dmg);
 		Destroy(this.gameObject);
 	}

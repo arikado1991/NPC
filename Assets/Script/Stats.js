@@ -45,6 +45,8 @@
 			EXP = 0;
 			CappedEXP *= 1.2;
 			GameObject.FindGameObjectWithTag("Player").BroadcastMessage("Lit");
+			if (level > 4)
+				GameObject.FindGameObjectWithTag("Player").BroadcastMessage("Evolve");
 			
 		}
 		function AddEXP(dExp: int){

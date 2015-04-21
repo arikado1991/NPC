@@ -1,16 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\RayScript.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Sources\LightningBolt.cs">
     <Files>
-      <File FileName="Assets\Script\Skills.js" Line="19" Column="3" />
-      <File FileName="Assets\Script\Stats.js" Line="31" Column="5" />
-      <File FileName="Assets\Script\Character.js" Line="36" Column="2" />
-      <File FileName="Assets\Script\RayScript.js" Line="27" Column="19" />
-      <File FileName="Assets\Script\EnemyScript.js" Line="70" Column="4" />
-      <File FileName="Assets\Script\Rock.js" Line="23" Column="2" />
-      <File FileName="Assets\Script\Setting.js" Line="2" Column="30" />
-      <File FileName="Assets\Script\AOEScript.js" Line="33" Column="6" />
-      <File FileName="Assets\Script\CameraScript.js" Line="4" Column="2" />
+      <File FileName="Assets\Sources\LightningBolt.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Skills.js" Line="1" Column="1" />
+      <File FileName="Assets\Script\Character.js" Line="1" Column="1" />
+      <File FileName="Assets\Script\Stats.js" Line="1" Column="1" />
+      <File FileName="Assets\Script\EnemyScript.js" Line="1" Column="1" />
+      <File FileName="Assets\Script\Rock.js" Line="1" Column="1" />
+      <File FileName="Assets\Script\UI.js" Line="1" Column="1" />
+      <File FileName="Assets\Sources\~ControlScripts\DragTransform.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
