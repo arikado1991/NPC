@@ -13,6 +13,7 @@
 	var cooldown: float;
 	var attack: boolean;
 	var dest: Vector3;
+	var locked: boolean;
 
 	function Start () {
 		anim = this.GetComponentInChildren(Animator);
@@ -22,7 +23,7 @@
 		dest = transform.position;
 		stats= new Stats("mage");
 	
-		
+		PlayerPrefs.SetInt('locked', 0);
 		
 	}
 	function getHit(dmg: int){
@@ -31,23 +32,8 @@
 
 
 	function Update () {
-		if (anim.GetFloat("Cooldown") <= 0){
-			if (Input.GetKey('z')){
-				attack = true;
-				cooldown = .8;
-				anim.SetBool("Attack", true);
-				anim.SetFloat("Cooldown", .3);
-				
-			}
-			if (Input.GetKey('x')){
-				cooldown = .5;
-				anim.SetFloat("Cooldown", .4);
-				var bullet = GameObject.Instantiate(projectile);
-				bullet.BroadcastMessage('setDir', this.transform.rotation*-Vector3.forward);
-				bullet.BroadcastMessage('setPos', this.transform.position);
-				bullet.BroadcastMessage('setDmg', dmg*.8);
-			}
-		}
+		
+	
 		
 		var dir: Vector3;
 		if (transform.position != dest){

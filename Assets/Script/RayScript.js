@@ -22,8 +22,9 @@ function OnMouseOver(): void{
 		}
 		if (Input.GetKeyDown('4'))
 			player.BroadcastMessage("CastSkill4", Vector3(hit.point.x, 0, hit.point.z));
-		if (Input.GetKeyDown('1'))
+		if (Input.GetKey('1'))
 			player.BroadcastMessage("CastSkill1", hit.point);
-		
+		if (Input.GetKey('3'))
+			player.BroadcastMessage("CastSkill1", hit.point);
 	}
 }
