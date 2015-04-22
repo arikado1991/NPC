@@ -1,15 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Sources\LightningBolt.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\IceBreathDmg.js">
     <Files>
-      <File FileName="Assets\Sources\LightningBolt.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\Skills.js" Line="1" Column="1" />
-      <File FileName="Assets\Script\Character.js" Line="1" Column="1" />
-      <File FileName="Assets\Script\Stats.js" Line="1" Column="1" />
-      <File FileName="Assets\Script\EnemyScript.js" Line="1" Column="1" />
-      <File FileName="Assets\Script\Rock.js" Line="1" Column="1" />
-      <File FileName="Assets\Script\UI.js" Line="1" Column="1" />
-      <File FileName="Assets\Sources\~ControlScripts\DragTransform.js" Line="1" Column="1" />
+      <File FileName="Assets\Script\Character.js" Line="98" Column="60" />
+      <File FileName="Assets\Script\IceBreath.js" Line="8" Column="2" />
+      <File FileName="Assets\Script\IceBreathDmg.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

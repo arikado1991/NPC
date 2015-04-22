@@ -4,6 +4,7 @@
 	var anim: Animator;
 	var projectile: GameObject;
 	var AOE: GameObject;
+	var Channelling: GameObject;
 	var LvUpLight: GameObject;
 	var HP = 500;
 	var dmg = 100;
@@ -90,13 +91,26 @@
 		aoe.BroadcastMessage("SetPos", p );
 	}
 	
+	function CastSkill3 (p: Vector3){
+		transform.LookAt(p + Vector3(0,-p.y+.2,0));
+		var aoe: GameObject = GameObject.Instantiate(Channelling);
+		aoe.tag = "PlayerSkill";
+		//aoe.BroadcastMessage("SetDuration", 5.0);
+		aoe.transform.position = transform.position + Vector3.up ;
+		aoe.transform.LookAt(p + Vector3(0,-p.y+.2,0));
+	}
+	
 	function Lit(){
-		GameObject.Instantiate(LvUpLight).transform.position = transform.position + Vector3.up*.1;
+		var light: GameObject = GameObject.Instantiate(LvUpLight);
+		light.transform.position = transform.position + Vector3.up*.1;
+		
 	}
 	function Evolve(){
 		if (EvolvedForm != null){
-			GameObject.Instantiate(EvolvedForm).transform.position = transform.position;
+			var e: GameObject = GameObject.Instantiate(EvolvedForm);
+			e.transform.position = transform.position;
 			EvolvedForm = null;
+			GameObject.FindObjectOfType(Character).stats = stats;
 			GameObject.Destroy(this.gameObject);
 		}
 	}

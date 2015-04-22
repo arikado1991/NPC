@@ -8,6 +8,7 @@ var dmg: int;
 var cooldown: float;
 var meleeRange: float;
 var EXPPoint: int;
+var locked = false;
 
 function Awake () {
 	HP = 200;
@@ -36,7 +37,7 @@ function Update () {
 	if (cooldown > 0){
 		cooldown -= Time.deltaTime;
 	}
-	else if (target!= null && Vector3.Distance(transform.position, target.transform.position) <= meleeRange) {
+	else if (target!= null && !NeedToMove() && cooldown <= 0) {
 		
 		
 		target.GetComponent(Character).stats.HP -=  dmg;
@@ -46,7 +47,13 @@ function Update () {
 
 function NeedToMove(){
 	if (target == null) return false;
-	return (Vector3.Distance(target.transform.position, transform.position) > target.GetComponentInChildren(CapsuleCollider).radius + GetComponent(CapsuleCollider).radius);
+	//Debug.Log("Distance");
+	//Debug.Log(Vector3.Distance(target.transform.position//+Vector3(0,-target.transform.position.y,0)
+	//, transform.position /*+ Vector3(0,-transform.position.y,0)*/)) ;
+//	Debug.Log("Radius Sum");
+	//Debug.Log(target.GetComponentInChildren(CapsuleCollider).radius + GetComponentInChildren(CapsuleCollider).radius);
+	return (Vector3.Distance(target.transform.position//+Vector3(0,-target.transform.position.y,0)
+	, transform.position /*+ Vector3(0,-transform.position.y,0)*/)  > target.GetComponentInChildren(CapsuleCollider).radius + GetComponentInChildren(CapsuleCollider).radius);
 }
 
 function PathFind(target: GameObject){
@@ -66,7 +73,7 @@ function PathFind(target: GameObject){
 				var dir: Vector3 = Vector3(hit.point.x,0,hit.point.z)-player.transform.position;
 				dir = transform.position - dir*(1/dir.magnitude)*GetComponentInChildren(CapsuleCollider).radius;
 	
-				if (Vector3.Distance(player.transform.position, transform.position) > player.GetComponentInChildren(CapsuleCollider).radius + GetComponent(CapsuleCollider).radius)
+				if (NeedToMove())
 					player.BroadcastMessage("SetDestination", dir);
 				else player.BroadcastMessage("MeleeAttack", this.gameObject);
 			
@@ -76,11 +83,19 @@ function PathFind(target: GameObject){
 function getHit(dmg:int){
 	HP -= dmg;
 	if (HP <= 0){
-		for (var i: int = 0; i < 1; i++)
+		if (respawn != null){
 			GameObject.Instantiate(respawn).transform.position = Vector3(Random.RandomRange(0,5),this.transform.position.y,Random.RandomRange(0,5));
+			respawn = null;
+		}
 		GameObject.FindObjectOfType(Character).stats.AddEXP(EXPPoint);
 		GameObject.Destroy(this.gameObject);
 		}
 	else target = GameObject.FindGameObjectWithTag("Player");
+}
+
+
+
+function OnCollisionTriggerEnter(col: Collider ){
+	col.attachedRigidbody.BroadcastMessage("Lock");
 }
 

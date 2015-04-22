@@ -23,7 +23,7 @@ function OnTriggerEnter(c:Collider){
 	
 	if (c.gameObject.CompareTag("Enemy")){
 		GameObject.Instantiate(GameObject.FindObjectOfType(Setting).ImpactPrefab).
-		BroadcastMessage("SetPos",transform.position);
+			BroadcastMessage("SetPos",transform.position);
 		c.gameObject.BroadcastMessage("getHit",dmg);
 		Destroy(this.gameObject);
 	}

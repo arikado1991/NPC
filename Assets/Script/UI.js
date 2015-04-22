@@ -6,6 +6,7 @@ function Start () {
 }
 
 function OnGUI() {
+	if(player == null) player = player = GameObject.FindGameObjectWithTag("Player");
 	if 	(player.GetComponent(Character).HP  <= 0)
 		GUI.Box(Rect(Screen.width/2-100,Screen.height/2-100, 200,200), "Game over" );
 	else

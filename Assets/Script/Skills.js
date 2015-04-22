@@ -6,7 +6,6 @@ class Skill{
 	var skillType: SkillType;
 	var attribute: AttributeType;
 	var statusEffect: StatusEffect;
-	var prefab: GameObject;
 	var duration: float;
 	var baseDamage: int;
 	var range: float;

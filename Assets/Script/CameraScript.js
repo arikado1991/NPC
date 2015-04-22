@@ -5,5 +5,5 @@ function Start () {
 }
 
 function Update () {
-	transform.position = GameObject.FindGameObjectWithTag("Player").transform.position + Vector3(0,7.5,-6);
+	transform.position = GameObject.FindGameObjectWithTag("Player").transform.position + Vector3(0,4,-5);
 }
