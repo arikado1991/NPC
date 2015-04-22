@@ -2,10 +2,10 @@
 var cooldown: float;
 var baseDamage: int;
 var damage: int;
-function Start(){cooldown = 0; baseDamage = 10;} 
+function Awake(){cooldown = 0; baseDamage = 10;} 
 function SetDamage(dmg: int){
 	Debug.Log(dmg);
-	damage = (baseDamage*(1+dmg*.2));
+	damage = (baseDamage*(1+dmg*.1));
 	Debug.Log(damage);
 }
 
