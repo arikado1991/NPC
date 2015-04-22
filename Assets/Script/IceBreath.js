@@ -1,14 +1,14 @@
 ﻿#pragma strict
 var cooldown = 0;
 var dir: Vector3;
+var skill: Skill;
 function Start () {
 	for (var child: Transform in transform)
 		child.tag = "PlayerSkill";
 }
 
-function OnCollisionEnter(){
-	
-}
+
+
 
 function Update () {
 	if(Input.GetKeyUp('3')||Input.GetMouseButtonDown(0))

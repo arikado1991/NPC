@@ -15,4 +15,8 @@ class Skill{
 		attribute = aType;
 		statusEffect = sType;
 	}
+	
+	function SetBaseDamage(bd: int){
+		baseDamage = bd;
+	}
 }

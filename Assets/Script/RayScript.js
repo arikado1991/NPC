@@ -1,5 +1,6 @@
-﻿#pragma strict
+﻿ #pragma strict
 
+//Put this on any clickable objects
 
 function OnMouseOver(): void{
 	var ray: Ray = Camera.main.ScreenPointToRay(Input.mousePosition);

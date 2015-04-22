@@ -57,6 +57,7 @@
      <Compile Include="Assets\Script\RayScript.js" />
      <Compile Include="Assets\Script\Rock.js" />
      <Compile Include="Assets\Script\Setting.js" />
+     <Compile Include="Assets\Script\Shortlived.js" />
      <Compile Include="Assets\Script\Skills.js" />
      <Compile Include="Assets\Script\Stats.js" />
      <Compile Include="Assets\Script\UI.js" />

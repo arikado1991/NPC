@@ -2,12 +2,12 @@
 
 	var stats: Stats;
 	var anim: Animator;
-	var projectile: GameObject;
-	var AOE: GameObject;
-	var Channelling: GameObject;
-	var LvUpLight: GameObject;
+	var skillPrefabs: GameObject[];
+
 	var HP = 500;
 	var dmg = 100;
+	var moving: boolean;
+	var LvUpLight: GameObject;
 	@HideInInspector
 	var speed: float;
 	var turnSpeed: float;
@@ -17,15 +17,15 @@
 	var locked: boolean;
 	var EvolvedForm: GameObject;
 
-	function Start () {
+	function Awake () {
 		anim = this.GetComponentInChildren(Animator);
 		turnSpeed = 2.0;
 		speed	  = 5;
 		attack = false;
 		dest = transform.position;
 		stats= new Stats("mage");
-	
-		PlayerPrefs.SetInt('locked', 0);
+		skillPrefabs = GameObject.FindObjectOfType(Setting).SkillPrefabs;
+
 		
 	}
 	function getHit(dmg: int){
@@ -79,25 +79,25 @@
 		if(cooldown > 0) return;
 		cooldown = .5;
 		anim.SetFloat("Cooldown", .4); 
-		var bullet = GameObject.Instantiate(projectile);
+		var bullet = GameObject.Instantiate(skillPrefabs[0]);
 		bullet.BroadcastMessage('setDir', pos - transform.position);
 		bullet.BroadcastMessage('setPos', transform.position);
 		bullet.BroadcastMessage('setDmg', dmg);
 	}
 	function CastSkill4 (p: Vector3){
 		transform.LookAt(p + Vector3(0,-p.y,0));
-		var aoe: GameObject = GameObject.Instantiate(AOE);
+		var aoe: GameObject = GameObject.Instantiate(skillPrefabs[3]);
 		aoe.BroadcastMessage("SetDuration", 5.0);
 		aoe.BroadcastMessage("SetPos", p );
 	}
 	
 	function CastSkill3 (p: Vector3){
 		transform.LookAt(p + Vector3(0,-p.y+.2,0));
-		var aoe: GameObject = GameObject.Instantiate(Channelling);
+		var aoe: GameObject = GameObject.Instantiate(skillPrefabs[2]);
 		aoe.tag = "PlayerSkill";
-		//aoe.BroadcastMessage("SetDuration", 5.0);
+		aoe.BroadcastMessage("SetDamage", stats.spAttack);
 		aoe.transform.position = transform.position + Vector3.up ;
-		aoe.transform.LookAt(p + Vector3(0,-p.y+.2,0));
+		aoe.transform.LookAt(p + Vector3(0,-p.y+.1,0));
 	}
 	
 	function Lit(){
@@ -108,9 +108,10 @@
 	function Evolve(){
 		if (EvolvedForm != null){
 			var e: GameObject = GameObject.Instantiate(EvolvedForm);
-			e.transform.position = transform.position;
+			//e.transform.position = transform.position;
+			e.GetComponent(Character).stats = new Stats( stats);
 			EvolvedForm = null;
-			GameObject.FindObjectOfType(Character).stats = stats;
+			
 			GameObject.Destroy(this.gameObject);
 		}
 	}

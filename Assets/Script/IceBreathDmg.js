@@ -1,7 +1,13 @@
 ﻿#pragma strict
 var cooldown: float;
-
-function Start(){cooldown = 0;} 
+var baseDamage: int;
+var damage: int;
+function Start(){cooldown = 0; baseDamage = 10;} 
+function SetDamage(dmg: int){
+	Debug.Log(dmg);
+	damage = (baseDamage*(1+dmg*.2));
+	Debug.Log(damage);
+}
 
 function OnTriggerStay(c: Collider){
 	var target: String;
@@ -10,8 +16,8 @@ function OnTriggerStay(c: Collider){
 	
 	Debug.Log(c.gameObject.tag);
 	if (c.gameObject.CompareTag(target) && cooldown <= 0){
-		Debug.Log("FREEZE");
-		c.gameObject.BroadcastMessage("getHit", 40);
+
+		c.gameObject.BroadcastMessage("getHit", damage);
 		
 	}
 }

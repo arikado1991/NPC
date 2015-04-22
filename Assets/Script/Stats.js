@@ -15,7 +15,7 @@
 		
 		function CreateMage(){
 			HP = maxHP = 400;
-			level = 0;
+			level = 1;
 			attack = 20;
 			spAttack = 80;
 			defense = 20;
@@ -35,6 +35,19 @@
 			
 		}
 		
+		function Stats(other: Stats){
+			Debug.Log("Cheese");
+			HP = maxHP =  other.maxHP;
+			
+			level = other.level;
+			attack = other.attack;
+			spAttack = other.spAttack;
+			defense = other.defense;
+			spDefense = other.spDefense;
+			CappedEXP = other.CappedEXP;
+			EXP = 0;
+		}
+		
 		function LvUp(){
 			level++;
 			maxHP += 20;
@@ -42,6 +55,7 @@
 			maxMP += 20;
 			MP = maxMP;
 			attack += 5;
+			spAttack += 8;
 			EXP = 0;
 			CappedEXP *= 1.2;
 			GameObject.FindGameObjectWithTag("Player").BroadcastMessage("Lit");
