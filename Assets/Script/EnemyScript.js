@@ -10,6 +10,10 @@ var meleeRange: float;
 var EXPPoint: int;
 var locked = false;
 
+private var CharacterPrefab : GameObject;
+private var playerHealth: Character;
+
+
 function Awake () {
 	HP = 200;
 	target = null;
@@ -19,6 +23,8 @@ function Awake () {
 	cooldown = 0;
 	meleeRange = 1.205;
 	EXPPoint = 10;
+	CharacterPrefab = GameObject.FindGameObjectWithTag("Player");
+	playerHealth = CharacterPrefab.GetComponent(Character);
 
 }
 
@@ -40,7 +46,8 @@ function Update () {
 	else if (target!= null && !NeedToMove() && cooldown <= 0) {
 		
 		
-		target.GetComponent(Character).stats.HP -=  dmg;
+		//target.GetComponent(Character).stats.HP -=  dmg;
+		playerHealth.playerGetHit(dmg);
 		cooldown = 1.2;
 	}
 }

@@ -36,9 +36,14 @@ import UnityEngine.UI;
 
 		
 	}
-	function getHit(dmg: int){
+	public function playerGetHit(dmg: int){
 		damaged = true;
-		HP -= dmg;
+		if(damaged)
+		{
+			Debug.Log("Hit Here");
+	
+			HP -= dmg;
+		}
 		//DamageImage.color = flashColor;
 		HealthSlider.value = HP;
 	}
