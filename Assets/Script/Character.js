@@ -1,10 +1,12 @@
 ﻿#pragma strict
+import UnityEngine.UI;
 
 	var stats: Stats;
 	var anim: Animator;
 	var skillPrefabs: GameObject[];
 
 	var HP = 500;
+	var maxHP = 500;
 	var dmg = 100;
 	var moving: boolean;
 	var LvUpLight: GameObject;
@@ -16,6 +18,12 @@
 	var dest: Vector3;
 	var locked: boolean;
 	var EvolvedForm: GameObject;
+	
+	var HealthSlider : Slider;
+	var DamageImage : Image;
+	var flashSpeed : float = 5f;
+	var flashColor : Color = new Color(1f, 0f, 0f, 0.1f);
+	private var damaged : boolean;
 
 	function Awake () {
 		anim = this.GetComponentInChildren(Animator);
@@ -29,13 +37,24 @@
 		
 	}
 	function getHit(dmg: int){
+		damaged = true;
 		HP -= dmg;
+		//DamageImage.color = flashColor;
+		HealthSlider.value = HP;
 	}
 
 
 	function Update () {
 		
-	
+		if(damaged)
+		{
+			DamageImage.color = flashColor;
+		}
+		else
+		{
+			DamageImage.color = Color.Lerp(DamageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+		}
+		damaged = false;
 		
 		var dir: Vector3;
 		if (transform.position != dest){
