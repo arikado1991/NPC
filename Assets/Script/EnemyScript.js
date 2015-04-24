@@ -8,7 +8,12 @@ var dmg: int;
 var cooldown: float;
 var meleeRange: float;
 var EXPPoint: int;
-var locked = false;
+var nav: NavMeshAgent;
+
+private var CharacterPrefab : GameObject;
+private var playerHealth: Character;
+private var playerEXP : Character;
+
 
 function Awake () {
 	HP = 500;
@@ -19,6 +24,11 @@ function Awake () {
 	cooldown = 0;
 	meleeRange = 1.205;
 	EXPPoint = 10;
+	CharacterPrefab = GameObject.FindGameObjectWithTag("Player");
+	playerHealth = CharacterPrefab.GetComponent(Character);
+	playerEXP = CharacterPrefab.GetComponent(Character);
+	
+	nav = GetComponent(NavMeshAgent);
 
 }
 
@@ -30,9 +40,9 @@ function Update () {
 	}
 	if (NeedToMove()){
 		
-		transform.LookAt(target.transform);
-		transform.rotation*Vector3.forward*Time.deltaTime;
-		transform.position += PathFind(target);
+		//transform.LookAt(target.transform);
+		//transform.rotation*Vector3.forward*Time.deltaTime;
+		nav.SetDestination(plr.transform.position);
 	}
 	if (cooldown > 0){
 		cooldown -= Time.deltaTime;
@@ -40,7 +50,8 @@ function Update () {
 	else if (target!= null && !NeedToMove() && cooldown <= 0) {
 		
 		
-		target.GetComponent(Character).stats.HP -=  dmg;
+		//target.GetComponent(Character).stats.HP -=  dmg;
+		playerHealth.playerGetHit(dmg);
 		cooldown = 1.2;
 	}
 }
@@ -88,6 +99,7 @@ function getHit(dmg:int){
 			respawn = null;
 		}
 		GameObject.FindObjectOfType(Character).stats.AddEXP(EXPPoint);
+		playerEXP.expGain();
 		GameObject.Destroy(this.gameObject);
 		}
 	else target = GameObject.FindGameObjectWithTag("Player");
