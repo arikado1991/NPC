@@ -12,7 +12,7 @@ function SetPos(pos: Vector3){
 function Update () {
 	if (duration < 0) {
 		GameObject.Destroy(this.gameObject);
-		Debug.Log("happens");
+		//Debug.Log("happens");
 	}
 	transform.position = position + Vector3(Random.RandomRange(-0.05f,0.05f),Random.RandomRange(-0.05f,0.05f),Random.RandomRange(-0.05f,0.05f));
 	duration -= Time.deltaTime;

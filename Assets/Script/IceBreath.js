@@ -11,14 +11,13 @@ function Start () {
 
 
 function Update () {
-	if(Input.GetKeyUp('3')||Input.GetMouseButtonDown(0))
+	if(Input.GetKeyUp('3'))
 	{	
 		GameObject.Destroy(this.gameObject);
 		return;
 	}
 
 	cooldown -= Time.deltaTime;
-	
-	transform.LookAt(GameObject.FindGameObjectWithTag("Cursor").transform.position);
-	transform.position = GameObject.FindGameObjectWithTag("Player").transform.position + Vector3.up;
+	transform.forward = GameObject.FindGameObjectWithTag("Player").transform.forward;
+	transform.position = GameObject.FindGameObjectWithTag("Player").transform.position + Vector3.up + this.transform.forward * 0.5;
 }

@@ -7,14 +7,13 @@ function Start () {
 }
 
 function SetGameState(s: int){
-	Debug.LogError("Should happen");
-	Debug.Log(s);
+//	Debug.Log(s);
 	gameState = s;
-	Debug.Log(gameState);
+	//Debug.Log(gameState);
 }
 
 function OnGUI() {
-	Debug.Log(gameState);
+//	Debug.Log(gameState);
 	if(player == null) player = player = GameObject.FindGameObjectWithTag("Player");
 	if 	(gameState == -1)
 		Application.LoadLevel("GameOver");

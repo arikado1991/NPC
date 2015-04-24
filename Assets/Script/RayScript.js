@@ -1,9 +1,9 @@
-﻿ #pragma strict
+﻿ /*#pragma strict
 
 //Put this on any clickable objects
 
 function OnMouseOver(): void{
-	var ray: Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+	/*var ray: Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 	var hit: RaycastHit;
 	
 	if (Physics.Raycast(ray,  hit, 100))
@@ -14,7 +14,7 @@ function OnMouseOver(): void{
 		GameObject.FindGameObjectWithTag("Cursor").transform.position = pos + Vector3.up*.02;
 		
 		
-		if (Input.GetMouseButton(0)){
+		/*if (Input.GetMouseButton(0)){
 			
 			
 			
@@ -35,4 +35,4 @@ function OnMouseOver(): void{
 		if (Input.GetKeyDown('3')&&!Input.GetMouseButton(0))
 			player.BroadcastMessage("CastSkill3", hit.point);
 	}
-}
+}*/
