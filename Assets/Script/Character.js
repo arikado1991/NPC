@@ -42,10 +42,10 @@ import UnityEngine.UI;
 		{
 			Debug.Log("Hit Here");
 	
-			HP -= dmg;
+			stats.HP -= dmg;
 		}
 		//DamageImage.color = flashColor;
-		HealthSlider.value = HP;
+		HealthSlider.value = stats.HP;
 	}
 
 
