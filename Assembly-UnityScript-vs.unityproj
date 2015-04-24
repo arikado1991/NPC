@@ -47,20 +47,24 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\AOEScript.js" />
+     <Compile Include="Assets\Script\BossScript.js" />
      <Compile Include="Assets\Script\CameraScript.js" />
      <Compile Include="Assets\Script\Character.js" />
+     <Compile Include="Assets\Script\Enemy2Script.js" />
      <Compile Include="Assets\Script\EnemyScript.js" />
+     <Compile Include="Assets\Script\GameOverScreenScript.js" />
      <Compile Include="Assets\Script\IceBreath.js" />
      <Compile Include="Assets\Script\IceBreathDmg.js" />
      <Compile Include="Assets\Script\ImpactScript.js" />
      <Compile Include="Assets\Script\LvUpLight.js" />
+     <Compile Include="Assets\Script\Portal.js" />
      <Compile Include="Assets\Script\RayScript.js" />
      <Compile Include="Assets\Script\Rock.js" />
      <Compile Include="Assets\Script\Setting.js" />
      <Compile Include="Assets\Script\Shortlived.js" />
      <Compile Include="Assets\Script\Skills.js" />
      <Compile Include="Assets\Script\Stats.js" />
-     <Compile Include="Assets\Script\UI.js" />
+     <Compile Include="Assets\Script\UIScript.js" />
      <Compile Include="Assets\Sources\CrumpleMesh.js" />
      <Compile Include="Assets\Sources\ExtrudedMeshTrail.js" />
      <Compile Include="Assets\Sources\FractalTexture.js" />

@@ -29,7 +29,11 @@
 		
 	}
 	function getHit(dmg: int){
-		HP -= dmg;
+		stats.HP -= dmg;
+		if (stats.HP <= 0){
+			GameObject.FindObjectOfType(UIScript).SetGameState(-1);
+			Application.LoadLevel("GameOver");
+		}
 	}
 
 
