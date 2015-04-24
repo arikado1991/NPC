@@ -1,15 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\IceBreathDmg.js">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Character.js">
     <Files>
-      <File FileName="Assets\Script\Character.js" Line="48" Column="21" />
-      <File FileName="Assets\Script\IceBreath.js" Line="6" Column="29" />
-      <File FileName="Assets\Script\IceBreathDmg.js" Line="13" Column="1" />
-      <File FileName="Assets\Script\RayScript.js" Line="3" Column="36" />
-      <File FileName="Assets\Script\Shortlived.js" Line="14" Column="28" />
-      <File FileName="Assets\Script\Stats.js" Line="9" Column="22" />
-      <File FileName="Assets\Script\EnemyScript.js" Line="1" Column="1" />
-      <File FileName="Assets\Script\UI.js" Line="15" Column="51" />
+      <File FileName="Assets\Script\Character.js" Line="48" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

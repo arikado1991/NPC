@@ -8,7 +8,7 @@ var dmg: int;
 var cooldown: float;
 var meleeRange: float;
 var EXPPoint: int;
-var locked = false;
+var nav: NavMeshAgent;
 
 private var CharacterPrefab : GameObject;
 private var playerHealth: Character;
@@ -25,6 +25,8 @@ function Awake () {
 	EXPPoint = 10;
 	CharacterPrefab = GameObject.FindGameObjectWithTag("Player");
 	playerHealth = CharacterPrefab.GetComponent(Character);
+	
+	nav = GetComponent(NavMeshAgent);
 
 }
 
@@ -36,9 +38,9 @@ function Update () {
 	}
 	if (NeedToMove()){
 		
-		transform.LookAt(target.transform);
-		transform.rotation*Vector3.forward*Time.deltaTime;
-		transform.position += PathFind(target);
+		//transform.LookAt(target.transform);
+		//transform.rotation*Vector3.forward*Time.deltaTime;
+		nav.SetDestination(plr.transform.position);
 	}
 	if (cooldown > 0){
 		cooldown -= Time.deltaTime;

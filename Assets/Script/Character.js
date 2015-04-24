@@ -33,14 +33,16 @@ import UnityEngine.UI;
 		dest = transform.position;
 		stats= new Stats("mage");
 		skillPrefabs = GameObject.FindObjectOfType(Setting).SkillPrefabs;
-
+		HealthSlider.value = HealthSlider.maxValue = stats.maxHP;
+		
+		
 		
 	}
 	public function playerGetHit(dmg: int){
 		damaged = true;
 		if(damaged)
 		{
-			Debug.Log("Hit Here");
+
 	
 			stats.HP -= dmg;
 		}
@@ -127,6 +129,7 @@ import UnityEngine.UI;
 	function Lit(){
 		var light: GameObject = GameObject.Instantiate(LvUpLight);
 		light.transform.position = transform.position + Vector3.up*.1;
+		HealthSlider.value = HealthSlider.maxValue = stats.maxHP;
 		
 	}
 	function Evolve(){
