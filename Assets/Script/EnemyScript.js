@@ -12,6 +12,7 @@ var nav: NavMeshAgent;
 
 private var CharacterPrefab : GameObject;
 private var playerHealth: Character;
+private var playerEXP : Character;
 
 
 function Awake () {
@@ -25,6 +26,7 @@ function Awake () {
 	EXPPoint = 10;
 	CharacterPrefab = GameObject.FindGameObjectWithTag("Player");
 	playerHealth = CharacterPrefab.GetComponent(Character);
+	playerEXP = CharacterPrefab.GetComponent(Character);
 	
 	nav = GetComponent(NavMeshAgent);
 
@@ -97,6 +99,7 @@ function getHit(dmg:int){
 			respawn = null;
 		}
 		GameObject.FindObjectOfType(Character).stats.AddEXP(EXPPoint);
+		playerEXP.expGain();
 		GameObject.Destroy(this.gameObject);
 		}
 	else target = GameObject.FindGameObjectWithTag("Player");

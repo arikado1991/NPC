@@ -19,11 +19,14 @@ import UnityEngine.UI;
 	var locked: boolean;
 	var EvolvedForm: GameObject;
 	
-	var HealthSlider : Slider;
+	var HealthSlider : Slider; //health slider stuff here
 	var DamageImage : Image;
-	var flashSpeed : float = 5f;
+	var flashSpeed : float = 5f; //flash color if hurt
 	var flashColor : Color = new Color(1f, 0f, 0f, 0.1f);
-	private var damaged : boolean;
+	private var damaged : boolean; //is damaged
+	private var didKill : boolean;
+	
+	var xpSlider : Slider;
 
 	function Awake () {
 		anim = this.GetComponentInChildren(Animator);
@@ -34,6 +37,7 @@ import UnityEngine.UI;
 		stats= new Stats("mage");
 		skillPrefabs = GameObject.FindObjectOfType(Setting).SkillPrefabs;
 		HealthSlider.value = HealthSlider.maxValue = stats.maxHP;
+		xpSlider.value = stats.EXP;
 		
 		
 		
@@ -48,6 +52,16 @@ import UnityEngine.UI;
 		}
 		//DamageImage.color = flashColor;
 		HealthSlider.value = stats.HP;
+	}
+	
+	public function expGain()
+	{
+		didKill = true;
+		if(didKill)
+		{
+			xpSlider.value = stats.EXP;
+		}
+		didKill = false;
 	}
 
 
@@ -82,6 +96,7 @@ import UnityEngine.UI;
 		}
 		if (cooldown > 0) cooldown -= Time.deltaTime;
 		//if (HP <= 0) GameObject.Destroy(this.gameObject);
+		//xpSlider.value = stats.EXP;
 	}
 	
 	function SetDestination(dest:Vector3){
