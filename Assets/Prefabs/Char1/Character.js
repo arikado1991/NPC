@@ -34,7 +34,7 @@ import UnityEngine.UI;
 	 var pos : Vector3;
 
 
-	function Awake () {
+	function Start () {
 		anim = this.GetComponentInChildren(Animator);
 		turnSpeed = 60;
 		speed	  = 7;
@@ -44,7 +44,8 @@ import UnityEngine.UI;
 		skillPrefabs = GameObject.FindObjectOfType(Setting).SkillPrefabs;
 		
 		pos = transform.position;
-
+		HealthSlider = GameObject.FindObjectOfType(Setting).Sliders[0];
+		xpSlider = GameObject.FindObjectOfType(Setting).Sliders[1];
 		HealthSlider.value = HealthSlider.maxValue = stats.maxHP;
 		xpSlider.value = stats.EXP;
 		

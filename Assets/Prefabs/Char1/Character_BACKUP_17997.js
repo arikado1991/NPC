@@ -1,5 +1,5 @@
 ﻿#pragma strict
-import UnityEngine.UI;
+/*import UnityEngine.UI;
 
 	var stats: Stats;
 	var anim: Animator;
@@ -158,7 +158,7 @@ import UnityEngine.UI;
 			transform.position +=  translate;
 	
 		}*/
-	
+/*	
 		anim.SetFloat("Cooldown", anim.GetFloat("Cooldown") - Time.deltaTime);
 		if (anim.GetFloat("Cooldown") <= 0){
 			anim.SetBool("Attack", false);	
@@ -205,7 +205,7 @@ import UnityEngine.UI;
 		aoe.BroadcastMessage("SetDamage", stats.spAttack);
 		aoe.transform.position = transform.position + Vector3.up ;
 		aoe.transform.LookAt(p + Vector3(0,-p.y+.1,0));
-	}*/
+	}
 	
 	function Lit(){
 		var light: GameObject = GameObject.Instantiate(LvUpLight);
@@ -222,7 +222,7 @@ import UnityEngine.UI;
 			
 			GameObject.Destroy(this.gameObject);
 		}
-	}
+	}*/
 
 
 

@@ -1,8 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\EnemyScript.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Prefabs\Char1\Character.js">
     <Files>
-      <File FileName="Assets\Script\EnemyScript.js" Line="42" Column="5" />
+      <File FileName="Assets\Script\Setting.js" Line="9" Column="80" />
+      <File FileName="Assets\Script\EnemyScript.js" Line="1" Column="1" />
+      <File FileName="Assets\Prefabs\Char1\Character_BACKUP_17997.js" Line="208" Column="3" />
+      <File FileName="Assets\Prefabs\Char1\Character.js" Line="47" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
