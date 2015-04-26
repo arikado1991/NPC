@@ -1,4 +1,4 @@
-﻿#pragma strict
+#pragma strict
 import UnityEngine.UI;
 
 	var stats: Stats;
@@ -18,6 +18,7 @@ import UnityEngine.UI;
 	var dest: Vector3;
 	var locked: boolean;
 	var EvolvedForm: GameObject;
+	 var spacing = 1;
 	
 	var HealthSlider : Slider; //health slider stuff here
 	var DamageImage : Image;
@@ -28,14 +29,23 @@ import UnityEngine.UI;
 	
 	var xpSlider : Slider;
 
-	function Awake () {
+	
+	private var moveDirection : Vector3 = Vector3.zero;
+	 var pos : Vector3;
+
+
+	function Start () {
 		anim = this.GetComponentInChildren(Animator);
-		turnSpeed = 2.0;
-		speed	  = 5;
+		turnSpeed = 60;
+		speed	  = 7;
 		attack = false;
 		dest = transform.position;
 		stats= new Stats("mage");
 		skillPrefabs = GameObject.FindObjectOfType(Setting).SkillPrefabs;
+		
+		pos = transform.position;
+		HealthSlider = GameObject.FindObjectOfType(Setting).Sliders[0];
+		xpSlider = GameObject.FindObjectOfType(Setting).Sliders[1];
 		HealthSlider.value = HealthSlider.maxValue = stats.maxHP;
 		xpSlider.value = stats.EXP;
 		
@@ -66,7 +76,15 @@ import UnityEngine.UI;
 
 
 	function Update () {
+		//gets the WASD key inputs to move the character
+     	
+     
+		var translation : float = Input.GetAxis ("Vertical") * speed;
+		var rotation : float = Input.GetAxis ("Horizontal") * turnSpeed;
 		
+		// Make it move 10 meters per second instead of 10 meters per frame...
+		translation *= Time.deltaTime;
+		rotation *= Time.deltaTime;
 		if(damaged)
 		{
 			DamageImage.color = flashColor;
@@ -77,7 +95,42 @@ import UnityEngine.UI;
 		}
 		damaged = false;
 		
-		var dir: Vector3;
+		// Move translation along the object's z-axis
+		transform.Translate (0, 0, translation);
+		// Rotate around our y-axis
+		transform.Rotate (0, rotation, 0);
+		
+     	
+     	
+     
+     	if (Input.GetKeyDown('4')){
+			var aoe: GameObject = GameObject.Instantiate(skillPrefabs[3]);
+			aoe.BroadcastMessage("SetDuration", 5.0);
+			aoe.BroadcastMessage("SetPos", this.transform.position + this.transform.forward * 4 );
+     	}
+		
+		if (Input.GetKey('1')){
+
+		if(cooldown > 0) return;
+			cooldown = .5;
+			anim.SetFloat("Cooldown", .4); 
+			var bullet = GameObject.Instantiate(skillPrefabs[0]);
+			bullet.BroadcastMessage('setDir', this.transform.forward);
+			bullet.BroadcastMessage('setPos', transform.position + Vector3(0,0.5,0));
+			bullet.BroadcastMessage('setDmg', dmg);
+		}
+						
+								
+		if (Input.GetKeyDown('3')){
+			var ice: GameObject = GameObject.Instantiate(skillPrefabs[2]);
+			ice.tag = "PlayerSkill";
+			ice.BroadcastMessage("SetDamage", stats.spAttack);
+			ice.transform.position = this.transform.position + Vector3.up + this.transform.forward * 0.5 ;
+			ice.transform.forward = this.transform.forward;
+        }
+     	
+
+		/*var dir: Vector3;
 		if (transform.position != dest){
 	
 			
@@ -87,7 +140,7 @@ import UnityEngine.UI;
 				translate = dir;
 			transform.position +=  translate;
 	
-		}
+		}*/
 	
 		anim.SetFloat("Cooldown", anim.GetFloat("Cooldown") - Time.deltaTime);
 		if (anim.GetFloat("Cooldown") <= 0){
@@ -98,15 +151,8 @@ import UnityEngine.UI;
 		//if (HP <= 0) GameObject.Destroy(this.gameObject);
 		//xpSlider.value = stats.EXP;
 	}
-	
-	function SetDestination(dest:Vector3){
-		if (Vector3.Distance(dest,this.transform.position) > 0.6f)
-		{	
-			//Debug.Log(Vector3.Distance(dest,this.transform.position));
-			this.dest = dest;
-		}
-		transform.LookAt(dest);
-	}
+
+
 	function MeleeAttack(enemy: GameObject){
 		//if (col.gameObject.CompareTag("Enemy") && attack){
 			enemy.BroadcastMessage("getHit", dmg);
@@ -115,6 +161,8 @@ import UnityEngine.UI;
 			attack = false;
 					
 	}
+	
+	/*
 	function CastSkill1(pos:Vector3){
 		transform.LookAt(pos + Vector3(0,-pos.y,0));
 		if(cooldown > 0) return;
@@ -124,14 +172,15 @@ import UnityEngine.UI;
 		bullet.BroadcastMessage('setDir', pos - transform.position);
 		bullet.BroadcastMessage('setPos', transform.position);
 		bullet.BroadcastMessage('setDmg', dmg);
-	}
+	}*/
+	/*
 	function CastSkill4 (p: Vector3){
 		transform.LookAt(p + Vector3(0,-p.y,0));
 		var aoe: GameObject = GameObject.Instantiate(skillPrefabs[3]);
 		aoe.BroadcastMessage("SetDuration", 5.0);
 		aoe.BroadcastMessage("SetPos", p );
-	}
-	
+	}*/
+	/*
 	function CastSkill3 (p: Vector3){
 		transform.LookAt(p + Vector3(0,-p.y+.2,0));
 		var aoe: GameObject = GameObject.Instantiate(skillPrefabs[2]);
@@ -139,7 +188,7 @@ import UnityEngine.UI;
 		aoe.BroadcastMessage("SetDamage", stats.spAttack);
 		aoe.transform.position = transform.position + Vector3.up ;
 		aoe.transform.LookAt(p + Vector3(0,-p.y+.1,0));
-	}
+	}*/
 	
 	function Lit(){
 		var light: GameObject = GameObject.Instantiate(LvUpLight);

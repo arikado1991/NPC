@@ -16,7 +16,7 @@ private var playerEXP : Character;
 
 
 function Awake () {
-	HP = 200;
+	HP = 500;
 	target = null;
 	speed = .5;
 	respawn.transform.position = transform.position;
