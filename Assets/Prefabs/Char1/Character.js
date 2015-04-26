@@ -56,8 +56,10 @@ import UnityEngine.UI;
 		damaged = true;
 		if(damaged)
 		{
-
-	
+			if (stats.HP < 0)
+			{	
+				anim.SetTrigger('IsDead');
+			}
 			stats.HP -= dmg;
 		}
 		//DamageImage.color = flashColor;
@@ -81,6 +83,8 @@ import UnityEngine.UI;
      
 		var translation : float = Input.GetAxis ("Vertical") * speed;
 		var rotation : float = Input.GetAxis ("Horizontal") * turnSpeed;
+		Debug.Log(translation!= 0 || rotation != 0);
+		anim.SetBool("Walking", (translation!= 0 || rotation != 0));
 		
 		// Make it move 10 meters per second instead of 10 meters per frame...
 		translation *= Time.deltaTime;
