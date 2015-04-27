@@ -28,6 +28,9 @@ import UnityEngine.UI;
 	private var didKill : boolean;
 	
 	var xpSlider : Slider;
+	
+	var onCD : boolean; //these are for cooldowns
+	var coolImage : Image;
 
 	
 	private var moveDirection : Vector3 = Vector3.zero;
@@ -103,6 +106,16 @@ import UnityEngine.UI;
 		transform.Translate (0, 0, translation);
 		// Rotate around our y-axis
 		transform.Rotate (0, rotation, 0);
+		if(onCD)
+		{
+			coolImage.fillAmount = cooldown;
+		}
+		if(cooldown <= 0)
+		{
+			onCD = false;
+			coolImage.fillAmount = 1;
+		}
+			
 		
      	
      	
@@ -115,7 +128,11 @@ import UnityEngine.UI;
 		
 		if (Input.GetKey('1')){
 
-		if(cooldown > 0) return;
+		if(cooldown > 0)
+		{
+			onCD = true;
+			return;
+		}
 			cooldown = .5;
 			anim.SetFloat("Cooldown", .4); 
 			var bullet = GameObject.Instantiate(skillPrefabs[0]);
