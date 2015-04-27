@@ -83,7 +83,7 @@ import UnityEngine.UI;
      
 		var translation : float = Input.GetAxis ("Vertical") * speed;
 		var rotation : float = Input.GetAxis ("Horizontal") * turnSpeed;
-		Debug.Log(translation!= 0 || rotation != 0);
+
 		anim.SetBool("Walking", (translation!= 0 || rotation != 0));
 		
 		// Make it move 10 meters per second instead of 10 meters per frame...
