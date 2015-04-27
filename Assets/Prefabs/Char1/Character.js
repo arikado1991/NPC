@@ -29,7 +29,7 @@ import UnityEngine.UI;
 	
 	var xpSlider : Slider;
 	
-	var onCD : boolean;
+	var onCD : boolean; //these are for cooldowns
 	var coolImage : Image;
 
 	
